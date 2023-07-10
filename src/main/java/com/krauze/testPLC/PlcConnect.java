@@ -13,16 +13,24 @@ import java.util.concurrent.ExecutionException;
 
 public class PlcConnect {
     private static PlcConnection connection;
+    private static String ipAddress;
 
+    public static void setIpAddress(String ipAddress) {
+        PlcConnect.ipAddress = ipAddress;
+    }
 
-    public static boolean createConnection(String ip) {
-        try {
-            connection = new PlcDriverManager().getConnection("s7://" + ip);
-            System.out.println("Connection OK");
-            return true;
-        } catch (PlcConnectionException e) {
-            System.out.println("Connect not OK!");
-            return false;
+    public static PlcConnection createConnection() {
+        if (connection != null && connection.isConnected()) {
+            return connection;
+        } else {
+            try {
+                connection = new PlcDriverManager().getConnection("s7://" + ipAddress);
+                System.out.println("Connection OK");
+                return connection;
+            } catch (PlcConnectionException e) {
+                System.out.println("Connect not OK!");
+                return null;
+            }
         }
     }
 

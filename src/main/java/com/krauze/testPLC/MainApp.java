@@ -4,21 +4,21 @@ import java.util.concurrent.ExecutionException;
 
 public class MainApp {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        String connectionString = "192.168.1.101";
-
-        boolean statusConnection = PlcConnect.createConnection(connectionString);
-
-        System.out.println(PlcConnect.readData("ID1000", "DWORD"));
-
-        System.out.println(PlcConnect.readData("Q1.0", "BOOL"));
-        PlcConnect.writeData("Q1.0", "BOOL", "false");
-        System.out.println(PlcConnect.readData("Q1.0", "BOOL"));
-
-        System.out.println(PlcConnect.readData("Q1.1", "BOOL"));
-        PlcConnect.writeData("Q1.1", "BOOL", "false");
-        System.out.println(PlcConnect.readData("Q1.1", "BOOL"));
-
-        PlcConnect.closeConnection();
+//        String connectionString = "192.168.1.101";
+//
+//        boolean statusConnection = PlcConnect.createConnection(connectionString);
+//
+//        System.out.println(PlcConnect.readData("ID1000", "DWORD"));
+//
+//        System.out.println(PlcConnect.readData("Q1.0", "BOOL"));
+//        PlcConnect.writeData("Q1.0", "BOOL", "false");
+//        System.out.println(PlcConnect.readData("Q1.0", "BOOL"));
+//
+//        System.out.println(PlcConnect.readData("Q1.1", "BOOL"));
+//        PlcConnect.writeData("Q1.1", "BOOL", "false");
+//        System.out.println(PlcConnect.readData("Q1.1", "BOOL"));
+//
+//        PlcConnect.closeConnection();
 //        plcConnect.writeData("Q0.0", "BOOL", "false");
 //        plcConnect.writeData("Q0.1", "BOOL", "false");
 //        plcConnect.writeData("Q0.2", "BOOL", "false");
